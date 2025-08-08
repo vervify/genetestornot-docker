@@ -1,3 +1,9 @@
 
 *.cache
 log/development.log
+
+# Ignore compiled assets
+/public/assets/
+/tmp/
+*.DS_Store
+**/.DS_Store
