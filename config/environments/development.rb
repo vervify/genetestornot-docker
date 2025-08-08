@@ -27,9 +27,14 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  # Asset digests allow you to set far-future HTTP expiration dates on all assets,
-  # yet still be able to expire them through the digest params.
-  config.assets.digest = true
+  # Always compile assets on the fly (never read a manifest)
+  config.assets.compile = true
+
+  # Disable fingerprinting so no manifest.json is ever needed
+  config.assets.digest = false
+
+  # Turn off JS compression (we tried this already, but include it too)
+  config.assets.js_compressor = nil
 
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.

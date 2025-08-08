@@ -25,7 +25,8 @@ Rails.application.configure do
   # config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Compress JavaScripts and CSS.
-  config.assets.js_compressor = :uglifier
+  # Avoid ExecJS/Uglifier on old Ruby-let Rails serve plain JS
+  config.assets.js_compressor = nil
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
@@ -35,7 +36,10 @@ Rails.application.configure do
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
-  config.assets.digest = true
+  # Use non-digest filenames so your views can reference /assets/... directly
+  config.assets.digest = false
+  # Old Rails quirk: don't boot the whole app just to precompile assets
+  config.assets.initialize_on_precompile = false
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 

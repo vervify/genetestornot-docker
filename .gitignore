@@ -7,3 +7,9 @@ log/development.log
 /tmp/
 *.DS_Store
 **/.DS_Store
+/public/assets
+/log/*
+!/log/.keep
+/tmp/*
+!/tmp/.keep
+.DS_Store
