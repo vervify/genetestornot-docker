@@ -52,9 +52,6 @@ development:
   # Defaults to warning.
   #min_messages: notice
 
-  variables:
-    client_min_messages: warning
-
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
@@ -83,4 +80,5 @@ production:
   url: <%= ENV['DATABASE_URL'] %>
   pool: 5
   encoding: unicode
-  min_messages: warning
+  variables:
+    client_min_messages: warning
