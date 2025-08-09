@@ -79,9 +79,6 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] %>
+  pool: 5
   encoding: unicode
-  database: genetest_production
-  username: genetest
-  password: <%= ENV['GENETEST_DATABASE_PASSWORD'] %>
