@@ -75,7 +75,9 @@ test:
 #
 # You can use this database configuration with:
 
+# config/database.yml
 production:
   url: <%= ENV['DATABASE_URL'] %>
   pool: 5
   encoding: unicode
+  min_messages: warning
